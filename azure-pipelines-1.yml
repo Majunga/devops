@@ -1,0 +1,25 @@
+resources:
+- repo: self
+queue:
+  name: Default
+
+steps:
+- powershell: |
+   terraform init
+   terraform plan -out="terraform.tfplan" -var "do_token=$(doToken)"
+  workingDirectory: src/$(projectName)
+  displayName: 'PowerShell Script'
+
+- task: CopyFiles@2
+  displayName: 'Copy Digitalocean Deployment configs to: $(Build.ArtifactStagingDirectory)'
+  inputs:
+    SourceFolder: ./src/$(projectName)
+    Contents: |
+     **/*
+
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: do-plan'
+  inputs:
+    ArtifactName: 'do-plan'
