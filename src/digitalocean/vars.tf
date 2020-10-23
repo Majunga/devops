@@ -1,23 +1,28 @@
 variable "do_token" {
+  type        = string
   description = "Digital Ocean token"
 }
 
 variable "ClusterName" {
-    default = "staging"
-    description = "Name of the Kubernetes Cluster"
+  type        = string
+  default     = "staging"
+  description = "Name of the Kubernetes Cluster"
 }
 
 variable "Region" {
-  default = "lon1"
+  type        = string
+  default     = "lon1"
   description = "Location of the kubernetes server"
 }
 
 variable "NodeCount" {
-    default = 1
-    description = "Number of nodes to deploy"
+  type        = number
+  default     = 1
+  description = "Number of nodes to deploy"
 }
 
 variable "Size" {
-  default = "s-1vcpu-2gb"
+  type        = string
+  default     = "s-1vcpu-2gb"
   description = "Size of the kubernetes node"
 }
