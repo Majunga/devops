@@ -7,13 +7,13 @@ steps:
 - powershell: |
    terraform init
    terraform plan -out="terraform.tfplan" -var "do_token=$(doToken)"
-  workingDirectory: src/$(projectName)
+  workingDirectory: src/digitalocean
   displayName: 'PowerShell Script'
 
 - task: CopyFiles@2
   displayName: 'Copy Digitalocean Deployment configs to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    SourceFolder: ./src/$(projectName)
+    SourceFolder: ./src/digitalocean
     Contents: |
      **/*
 
