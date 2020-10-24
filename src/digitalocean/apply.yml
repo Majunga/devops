@@ -1,6 +1,6 @@
 resources:
 - pipeline: plan   # Name of the pipeline resource
-  source: Terraform DigitalOcean Plan # Name of the pipeline referenced by the pipeline resource
+  source: 31 # Name of the pipeline referenced by the pipeline resource
   trigger: 
     branches:
     - master
