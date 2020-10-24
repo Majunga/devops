@@ -1,0 +1,28 @@
+name: $(Build.BuildId)
+queue:
+  name: Default
+
+steps:
+- checkout: none  
+- powershell: |
+   if (Test-path '.\do-apply') 
+   { 
+      Remove-Item -Path .\do-apply –recurse
+   }
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
+  displayName: 'Clean directory'
+
+- task: DownloadBuildArtifacts@0
+  displayName: 'Download Build Artifacts'
+  inputs:
+    buildType: specific
+    project: '3621f7b5-b428-4cfb-92bc-528c4430aec4'
+    pipeline: 24
+    specificBuildWithTriggering: true
+    artifactName: 'do-apply'
+    downloadPath: '$(System.DefaultWorkingDirectory)'
+
+- powershell: |
+   terraform destroy ".\terraform.tfplan"
+  workingDirectory: '$(System.DefaultWorkingDirectory)/do-apply'
+  displayName: 'Destroy'
