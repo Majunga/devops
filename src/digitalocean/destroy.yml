@@ -1,4 +1,6 @@
-name: $(Build.BuildId)
+resources:
+  trigger: none
+
 queue:
   name: Default
 

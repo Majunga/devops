@@ -1,7 +1,16 @@
-name: $(Build.BuildId)
+resources:
+- pipeline: plan   # Name of the pipeline resource
+  source: Terraform DigitalOcean Plan # Name of the pipeline referenced by the pipeline resource
+  trigger: 
+    branches:
+    - master
+
 queue:
   name: Default
 
+trigger:
+  - master
+  
 steps:
 - checkout: none  
 - powershell: |
@@ -38,9 +47,9 @@ steps:
   displayName: 'Copy Kubernetes Deployment config to: $(Build.ArtifactStagingDirectory)'
   inputs:
     Contents: |
-     **\*
+    .\do-plan\**\*
     flattenFolders: false
-    workingDirectory: '$(System.DefaultWorkingDirectory)/do-plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
