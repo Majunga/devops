@@ -17,7 +17,7 @@ steps:
   inputs:
     buildType: specific
     project: '3621f7b5-b428-4cfb-92bc-528c4430aec4'
-    pipeline: 24
+    pipeline: 29
     specificBuildWithTriggering: true
     artifactName: 'do-apply'
     downloadPath: '$(System.DefaultWorkingDirectory)'
