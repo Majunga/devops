@@ -1,7 +1,7 @@
 resources:
   pipelines:
-  - pipeline: plan   # Name of the pipeline resource
-    source: 31 # Name of the pipeline referenced by the pipeline resource
+  - pipeline: doplan   # Name of the pipeline resource
+    source: Terraform DigitalOcean Plan # Name of the pipeline referenced by the pipeline resource
     trigger: 
       branches:
       - master
@@ -27,7 +27,7 @@ steps:
   inputs:
     buildType: specific
     project: '3621f7b5-b428-4cfb-92bc-528c4430aec4'
-    pipeline: 31
+    pipeline: doplan
     specificBuildWithTriggering: true
     artifactName: 'do-plan'
     downloadPath: '$(System.DefaultWorkingDirectory)'
