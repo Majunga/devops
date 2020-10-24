@@ -47,7 +47,7 @@ steps:
   displayName: 'Copy Kubernetes Deployment config to: $(Build.ArtifactStagingDirectory)'
   inputs:
     Contents: |
-    .\do-plan\**\*
+      .\do-plan\**\*
     flattenFolders: false
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
