@@ -4,7 +4,7 @@ resources:
     source: Terraform DigitalOcean Plan # Name of the pipeline referenced by the pipeline resource
     trigger: 
       branches:
-        - master
+        - dummy_branch
 
 queue:
   name: Default
