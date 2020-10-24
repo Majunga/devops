@@ -1,5 +1,4 @@
-resources:
-  trigger: none
+trigger: none
 
 queue:
   name: Default

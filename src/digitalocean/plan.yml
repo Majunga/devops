@@ -1,6 +1,5 @@
-resources:
-  trigger:
-    - master
+trigger:
+  - master
 
 queue:
   name: Default
