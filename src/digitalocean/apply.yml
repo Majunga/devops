@@ -47,13 +47,12 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Kubernetes Deployment config to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    Contents: |
-      .\do-plan\**\*
-    flattenFolders: false
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    SourceFolder: '$(System.DefaultWorkingDirectory)/do-plan'
+    Contents: '**/*'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
+    
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: do-apply'
   inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/do-plan'
     ArtifactName: 'do-apply'
+    publishLocation: 'Container'
