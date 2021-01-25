@@ -24,6 +24,6 @@ steps:
     downloadPath: '$(System.DefaultWorkingDirectory)'
 
 - powershell: |
-   terraform destroy ".\terraform.tfplan"
+   terraform destroy 
   workingDirectory: '$(System.DefaultWorkingDirectory)/do-apply'
   displayName: 'Destroy'
