@@ -30,3 +30,4 @@ override.tf.json
 src/digitalocean/.vs/slnx.sqlite
 src/digitalocean/.vs/VSWorkspaceState.json
 src/digitalocean/.vs/digitalocean/v16/.suo
+/src/digitalocean/.vs/ProjectSettings.json
