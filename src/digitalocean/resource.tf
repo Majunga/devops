@@ -1,7 +1,7 @@
 resource "digitalocean_kubernetes_cluster" "cluster" {
   name    = var.ClusterName
   region  = var.Region
-  version = "~> 2.0"
+  version = "1.21.2-do.2"
 
   node_pool {
     name       = "nodes"
