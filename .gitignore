@@ -27,3 +27,6 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+src/digitalocean/.vs/slnx.sqlite
+src/digitalocean/.vs/VSWorkspaceState.json
+src/digitalocean/.vs/digitalocean/v16/.suo
