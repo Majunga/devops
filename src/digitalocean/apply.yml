@@ -4,7 +4,7 @@ name: do-apply
 resources:
   pipelines:
   - pipeline: plan
-    source: do-plan
+    source: Terraform DigitalOcean Plan
     trigger: true
     
 queue:
