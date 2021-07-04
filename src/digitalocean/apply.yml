@@ -1,5 +1,12 @@
 trigger: none
+name: do-apply
 
+resources:
+  pipelines:
+  - pipeline: plan   # Name of the pipeline resource
+    source: do-plan # Name of the pipeline referenced by the pipeline resource
+    trigger: true
+    
 queue:
   name: Default
   
