@@ -3,8 +3,8 @@ name: do-apply
 
 resources:
   pipelines:
-  - pipeline: plan   # Name of the pipeline resource
-    source: do-plan # Name of the pipeline referenced by the pipeline resource
+  - pipeline: plan
+    source: do-plan
     trigger: true
     
 queue:
