@@ -1,6 +1,6 @@
 trigger:
   - master
-
+name: do-plan
 queue:
   name: Default
 
